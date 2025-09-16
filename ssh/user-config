@@ -1,0 +1,6 @@
+Host ubuntu-server
+HostName localhost
+Port 2222
+UserKnownHostsFile /dev/null
+StrictHostKeyChecking no
+IdentityFile ssh/user-key

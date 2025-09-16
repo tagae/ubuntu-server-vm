@@ -1,0 +1,27 @@
+#cloud-config
+autoinstall:
+  version: 1
+  storage:
+    layout:
+      name: direct
+  keyboard:
+    layout: us
+    variant: dvorak
+  ssh:
+    install-server: yes
+    allow-pw: no
+  packages:
+    - qemu-guest-agent
+  user-data:
+    users:
+      - name: ${username}
+        primary_group: users
+        groups: [ sudo ]
+        shell: /bin/bash
+        ssh_authorized_keys:
+          - ${ssh_authorized_key}
+        sudo: ALL=(ALL) NOPASSWD:ALL
+
+# Local Variables:
+# mode: yaml
+# End:
